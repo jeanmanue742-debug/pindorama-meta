@@ -1,59 +1,114 @@
-.hero {
-  text-align: center;
-  padding: 4rem 0;
-}
-
-.title {
-  font-size: 4rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  background: linear-gradient(to right, #58a6ff, #bc8cff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: -1px;
-}
-
-.subtitle {
-  font-size: 1.25rem;
-  color: #8b949e;
-  max-width: 600px;
-  margin: 0 auto 3rem;
-  line-height: 1.6;
-}
-
-.featuresGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.homeContainer {
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
-  margin-top: 2rem;
+  padding: 1rem 0;
 }
 
-.featureCard {
-  padding: 2rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-  display: block;
-}
-
-.featureCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-  border-color: var(--primary);
-}
-
-.featureIcon {
-  font-size: 2.5rem;
+.adBanner {
+  display: flex;
+  justify-content: center;
   margin-bottom: 1rem;
 }
 
-.featureTitle {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: var(--primary);
+.adBanner img {
+  max-width: 100%;
+  border-radius: 4px;
 }
 
-.featureDesc {
-  color: #8b949e;
-  line-height: 1.5;
+.mainGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gridCard {
+  position: relative;
+  display: block;
+  height: 200px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid #30363d;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  background: #0d1117;
+}
+
+.gridCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  border-color: #58a6ff;
+}
+
+.cardBg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center 20%;
+  opacity: 0.8;
+  transition: opacity 0.2s, transform 0.5s;
+}
+
+.gridCard:hover .cardBg {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.cardContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem 1rem 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 40%, transparent 100%);
+  color: white;
+}
+
+.cardContent h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 0.2rem 0;
+  letter-spacing: 1px;
+}
+
+.cardContent span {
+  font-size: 0.8rem;
+  color: #a0aec0;
+}
+
+/* Small Buttons Row */
+.smallGrid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.smallBtn {
+  flex: 1;
+  min-width: 150px;
+  background: #1a2a3a;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 700;
+  border-radius: 4px;
+  border: 1px solid #30363d;
+  transition: background 0.2s, border-color 0.2s;
+  letter-spacing: 1px;
+}
+
+.smallBtn:hover {
+  background: #2b4365;
+  border-color: #58a6ff;
 }

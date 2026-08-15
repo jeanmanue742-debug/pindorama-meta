@@ -1,6 +1,5 @@
 import './globals.css'
-
-export const metadata = {
+import './footer.css'
   title: 'Pindorama Meta - Top Decks & Tier List',
   description: 'O melhor lugar para encontrar as cartas, decks e tier list do Pindorama Card Game.',
 }
@@ -33,7 +32,36 @@ export default function RootLayout({ children }) {
 
         <footer className="footer">
           <div className="container">
-            <p>&copy; {new Date().getFullYear()} Pindorama Meta. Não afiliado aos criadores originais do jogo.</p>
+            <div className="discord-banner">
+              <div className="discord-logo">
+                <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" alt="Discord" width="40" />
+                <h2>DISCORD</h2>
+              </div>
+              <div className="discord-stats">
+                <span>👥 76174</span>
+                <span>🟢 8817</span>
+                <span>JOIN THE COMMUNITY</span>
+              </div>
+              <div className="discord-text">
+                <h3>TOP PLAYER COMMUNITY</h3>
+                <ul>
+                  <li>Torneios Semanais e Ligas</li>
+                  <li>Discussões com os melhores jogadores do game</li>
+                  <li>Ajuda para novos jogadores e dicas de deck</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="social-links">
+              <a href="#" className="social-icon">📺</a>
+              <a href="#" className="social-icon">▶️</a>
+              <a href="#" className="social-icon">🐦</a>
+            </div>
+
+            <p style={{ marginTop: '1rem', color: '#6b7280' }}>
+              &copy; {new Date().getFullYear()} Pindorama Meta. Não afiliado aos criadores originais do jogo.<br/>
+              Terms of Service | Contact | Server Status
+            </p>
           </div>
         </footer>
       </body>

@@ -1,5 +1,7 @@
 import './globals.css'
 import './footer.css'
+
+export const metadata = {
   title: 'Pindorama Meta - Top Decks & Tier List',
   description: 'O melhor lugar para encontrar as cartas, decks e tier list do Pindorama Card Game.',
 }

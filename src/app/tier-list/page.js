@@ -10,50 +10,40 @@ export default function TierListPage() {
       </div>
 
       <div className={styles.tierContainer}>
-        {/* Tier S */}
-        <div className={`glass-panel ${styles.tierRow}`}>
-          <div className={`${styles.tierLabel} ${styles.tierS}`}>Tier S</div>
-          <div className={styles.tierContent}>
-            <div className={styles.deckItem}>
-              <img src="/images/cards/placeholder.png" alt="Deck Placeholder" className={styles.deckImage} />
-              <div className={styles.deckName}>Controle Absoluto</div>
+        {tiers.map((tier, index) => (
+          <div key={index} className={styles.tierRow}>
+            <div 
+              className={styles.tierLabel} 
+              style={{ 
+                backgroundColor: tier.color || '#333',
+                color: '#fff',
+                textShadow: '1px 1px 2px rgba(0,0,0,0.8)'
+              }}
+            >
+              <span>{tier.name}</span>
             </div>
-            <div className={styles.deckItem}>
-              <img src="/images/cards/placeholder.png" alt="Deck Placeholder" className={styles.deckImage} />
-              <div className={styles.deckName}>Aggro Furioso</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Tier 1 */}
-        <div className={`glass-panel ${styles.tierRow}`}>
-          <div className={`${styles.tierLabel} ${styles.tier1}`}>Tier 1</div>
-          <div className={styles.tierContent}>
-            <div className={styles.deckItem}>
-              <img src="/images/cards/placeholder.png" alt="Deck Placeholder" className={styles.deckImage} />
-              <div className={styles.deckName}>Midrange Clássico</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Tier 2 */}
-        <div className={`glass-panel ${styles.tierRow}`}>
-          <div className={`${styles.tierLabel} ${styles.tier2}`}>Tier 2</div>
-          <div className={styles.tierContent}>
-            <div className={styles.deckItem}>
-              <img src="/images/cards/placeholder.png" alt="Deck Placeholder" className={styles.deckImage} />
-              <div className={styles.deckName}>Combo Surpresa</div>
+            <div className={styles.decksContainer}>
+              {tier.decks && tier.decks.map((deck, i) => (
+                <div key={i} className={styles.deckCard}>
+                  <div className={styles.deckImageWrapper}>
+                    <Image 
+                      src={deck.image} 
+                      alt={deck.deck_name} 
+                      fill 
+                      className={styles.deckImage} 
+                    />
+                  </div>
+                  <div className={styles.deckInfo}>
+                    <span className={styles.deckName}>{deck.deck_name}</span>
+                  </div>
+                </div>
+              ))}
+              {(!tier.decks || tier.decks.length === 0) && (
+                <div className={styles.emptyDeck}>Nenhum deck classificado neste tier.</div>
+              )}
             </div>
           </div>
-        </div>
-        
-        {/* Tier 3 */}
-        <div className={`glass-panel ${styles.tierRow}`}>
-          <div className={`${styles.tierLabel} ${styles.tier3}`}>Tier 3</div>
-          <div className={styles.tierContent}>
-            <p style={{ color: '#8b949e', alignSelf: 'center' }}>Nenhum deck reportado nesta tier ultimamente.</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   )

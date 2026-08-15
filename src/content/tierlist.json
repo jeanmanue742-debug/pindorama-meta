@@ -1,0 +1,38 @@
+{
+  "tiers": [
+    {
+      "name": "Tier 1",
+      "color": "#f56565",
+      "decks": [
+        {
+          "deck_name": "Deck Controle Padrão",
+          "image": "/images/cards/63.png"
+        },
+        {
+          "deck_name": "Agro Agressivo",
+          "image": "/images/cards/54.png"
+        }
+      ]
+    },
+    {
+      "name": "Tier 2",
+      "color": "#ed8936",
+      "decks": [
+        {
+          "deck_name": "Burn Clássico",
+          "image": "/images/cards/40.png"
+        }
+      ]
+    },
+    {
+      "name": "Tier 3",
+      "color": "#ecc94b",
+      "decks": [
+        {
+          "deck_name": "Combo Infinito",
+          "image": "/images/cards/20.png"
+        }
+      ]
+    }
+  ]
+}

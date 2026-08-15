@@ -1,0 +1,75 @@
+.pageHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #ff5858, #ffc858);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tierContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tierRow {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tierLabel {
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #000;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.tierContent {
+  flex: 1;
+  padding: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.deckItem {
+  width: 150px;
+  text-align: center;
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.deckItem:hover {
+  transform: translateY(-5px);
+}
+
+.deckImage {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  border: 2px solid var(--card-border);
+}
+
+.deckName {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Cores dos Tiers */
+.tierS { background-color: #ff7f7f; }
+.tier1 { background-color: #ffbf7f; }
+.tier2 { background-color: #ffff7f; }
+.tier3 { background-color: #7fff7f; }

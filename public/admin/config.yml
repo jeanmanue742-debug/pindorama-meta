@@ -1,0 +1,38 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+media_folder: "public/images/cards" # Media files will be stored in the repo under public/images/uploads
+public_folder: "/images/cards" # The src attribute for uploaded media will begin with /images/uploads
+
+collections:
+  - name: "cards"
+    label: "Cartas"
+    folder: "src/content/cards"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Nome", name: "title", widget: "string"}
+      - {label: "ID da Carta", name: "card_id", widget: "string"}
+      - {label: "Efeito", name: "effect", widget: "text", required: false}
+      - {label: "Custo", name: "cost", widget: "number", required: false}
+      - {label: "Força", name: "force", widget: "number", required: false}
+      - {label: "Imagem", name: "image", widget: "image", required: false}
+      - {label: "Corpo", name: "body", widget: "markdown", required: false}
+
+  - name: "tierlist"
+    label: "Tier List"
+    file: "src/content/tierlist.json"
+    fields:
+      - label: "Tiers"
+        name: "tiers"
+        widget: "list"
+        fields:
+          - {label: "Nome do Tier", name: "name", widget: "string"}
+          - {label: "Cor", name: "color", widget: "string"}
+          - label: "Decks"
+            name: "decks"
+            widget: "list"
+            fields:
+              - {label: "Nome do Deck", name: "deck_name", widget: "string"}
+              - {label: "Imagem", name: "image", widget: "image"}

@@ -1,0 +1,80 @@
+.pageHeader {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #58a6ff, #bc8cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.searchContainer {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.searchInput {
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem 1.5rem;
+  font-size: 1.125rem;
+  border-radius: 50px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: var(--foreground);
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.searchInput:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.cardItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  cursor: pointer;
+}
+
+.cardItem:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 15px rgba(88, 166, 255, 0.5));
+}
+
+.cardImage {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.cardName {
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--foreground);
+}
+
+.emptyState {
+  text-align: center;
+  grid-column: 1 / -1;
+  padding: 4rem 0;
+  color: #8b949e;
+  font-size: 1.25rem;
+}

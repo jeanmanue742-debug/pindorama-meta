@@ -1,12 +1,21 @@
-import styles from './page.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
+import styles from './page.module.css'
+import tierData from '../../content/tierlist.json'
 
-export default function TierListPage() {
+export const metadata = {
+  title: 'Tier List - Pindorama Meta',
+  description: 'Os melhores decks do formato atual.',
+}
+
+export default function TierList() {
+  const tiers = tierData.tiers || [];
+
   return (
-    <div className="animate-fade-in">
-      <div className={styles.pageHeader}>
-        <h1 className={styles.title}>Tier List</h1>
-        <p style={{ color: '#8b949e' }}>Os decks mais fortes do meta atual de Pindorama.</p>
+    <div className={`animate-fade-in ${styles.layout}`}>
+      <div className={styles.header}>
+        <h1>TIER LIST</h1>
+        <p>A classificação definitiva dos melhores decks do formato competitivo. Atualizado automaticamente pelos especialistas.</p>
       </div>
 
       <div className={styles.tierContainer}>

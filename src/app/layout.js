@@ -1,6 +1,8 @@
 import './globals.css'
 import './footer.css'
 
+import Link from 'next/link'
+
 export const metadata = {
   title: 'Pindorama Meta - Top Decks & Tier List',
   description: 'O melhor lugar para encontrar as cartas, decks e tier list do Pindorama Card Game.',
@@ -17,11 +19,11 @@ export default function RootLayout({ children }) {
       <body>
         <header className="header glass-panel">
           <div className="container">
-            <a href="/" className="logo">Pindorama Meta</a>
+            <Link href="/" className="logo">Pindorama Meta</Link>
             <nav className="nav-links">
-              <a href="/cards" className="nav-link">Cartas</a>
-              <a href="/tier-list" className="nav-link">Tier List</a>
-              <a href="/top-decks" className="nav-link">Top Decks</a>
+              <Link href="/cards" className="nav-link">Cartas</Link>
+              <Link href="/tier-list" className="nav-link">Tier List</Link>
+              <Link href="/top-decks" className="nav-link">Top Decks</Link>
             </nav>
           </div>
         </header>
